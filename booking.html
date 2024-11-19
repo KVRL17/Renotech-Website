@@ -212,6 +212,121 @@
                                   </div>
                                 </div>
                               </form>
+                              
+                              <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                  const form = document.getElementById("applicationForm");
+                                  const applyNowButton = document.getElementById("applyNow");
+                              
+                                  const name = document.getElementById("name");
+                                  const email = document.getElementById("email");
+                                  const phone = document.getElementById("phone");
+                                  const post = document.getElementById("post");
+                                  const designation = document.getElementById("designation");
+                                  const company = document.getElementById("company");
+                                  const skills = document.getElementById("skills");
+                                  const resume = document.getElementById("resume");
+                              
+                                  const errors = {
+                                    nameError: document.getElementById("nameError"),
+                                    emailError: document.getElementById("emailError"),
+                                    phoneError: document.getElementById("phoneError"),
+                                    postError: document.getElementById("postError"),
+                                    designationError: document.getElementById("designationError"),
+                                    companyError: document.getElementById("companyError"),
+                                    skillsError: document.getElementById("skillsError"),
+                                    resumeError: document.getElementById("resumeError"),
+                                  };
+                              
+                                  const validateForm = () => {
+                                    let isValid = true;
+                              
+                                    if (!name.value.trim()) {
+                                      errors.nameError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.nameError.classList.remove("active");
+                                    }
+                              
+                                    if (!email.value.trim() || !/\S+@\S+\.\S+/.test(email.value)) {
+                                      errors.emailError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.emailError.classList.remove("active");
+                                    }
+                              
+                                    if (!phone.value.trim() || !/^\d{10}$/.test(phone.value)) {
+                                      errors.phoneError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.phoneError.classList.remove("active");
+                                    }
+                              
+                                    if (!post.value.trim()) {
+                                      errors.postError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.postError.classList.remove("active");
+                                    }
+                              
+                                    if (!designation.value.trim()) {
+                                      errors.designationError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.designationError.classList.remove("active");
+                                    }
+                              
+                                    if (!company.value.trim()) {
+                                      errors.companyError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.companyError.classList.remove("active");
+                                    }
+                              
+                                    if (!skills.value.trim()) {
+                                      errors.skillsError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.skillsError.classList.remove("active");
+                                    }
+                              
+                                    if (!resume.files.length) {
+                                      errors.resumeError.classList.add("active");
+                                      isValid = false;
+                                    } else {
+                                      errors.resumeError.classList.remove("active");
+                                    }
+                              
+                                    applyNowButton.disabled = !isValid;
+                                  };
+                              
+                                  [name, email, phone, post, designation, company, skills, resume].forEach((input) => {
+                                    input.addEventListener("input", validateForm);
+                                  });
+                              
+                                  form.addEventListener("submit", async (event) => {
+                                    event.preventDefault();
+                              
+                                    const formData = new FormData();
+                                    formData.append("resume", resume.files[0]);
+                              
+                                    // Upload the file to the server and get the URL
+                                    const response = await fetch("/upload", {
+                                      method: "POST",
+                                      body: formData,
+                                    });
+                              
+                                    const result = await response.json();
+                                    const resumeUrl = result.fileUrl;
+                              
+                                    const encodedMessage = encodeURIComponent(
+                                      `Name: ${name.value.trim()}\nEmail: ${email.value.trim()}\nPhone: ${phone.value.trim()}\nPost Applied For: ${post.value.trim()}\nDesignation: ${designation.value.trim()}\nCompany: ${company.value.trim()}\nSkills: ${skills.value.trim()}\nResume: ${resumeUrl}`
+                                    );
+                              
+                                    window.open(`https://wa.me/+919381690958?text=${encodedMessage}`);
+                                  });
+                                });
+                              </script>                              
                         </div>
                     </div>
                 </div>
@@ -346,123 +461,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const form = document.getElementById("applicationForm");
-          const applyNowButton = document.getElementById("applyNow");
     
-          // Input fields
-          const name = document.getElementById("name");
-          const email = document.getElementById("email");
-          const phone = document.getElementById("phone");
-          const post = document.getElementById("post");
-          const designation = document.getElementById("designation");
-          const company = document.getElementById("company");
-          const skills = document.getElementById("skills");
-          const resume = document.getElementById("resume");
-    
-          // Error spans
-          const errors = {
-            nameError: document.getElementById("nameError"),
-            emailError: document.getElementById("emailError"),
-            phoneError: document.getElementById("phoneError"),
-            postError: document.getElementById("postError"),
-            designationError: document.getElementById("designationError"),
-            companyError: document.getElementById("companyError"),
-            skillsError: document.getElementById("skillsError"),
-            resumeError: document.getElementById("resumeError"),
-          };
-    
-          const validateForm = () => {
-            let isValid = true;
-    
-            // Validation checks
-            if (!name.value.trim()) {
-              errors.nameError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.nameError.classList.remove("active");
-            }
-    
-            if (!email.value.trim() || !/\S+@\S+\.\S+/.test(email.value)) {
-              errors.emailError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.emailError.classList.remove("active");
-            }
-    
-            if (!phone.value.trim() || !/^\d{10}$/.test(phone.value)) {
-              errors.phoneError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.phoneError.classList.remove("active");
-            }
-    
-            if (!post.value.trim()) {
-              errors.postError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.postError.classList.remove("active");
-            }
-    
-            if (!designation.value.trim()) {
-              errors.designationError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.designationError.classList.remove("active");
-            }
-    
-            if (!company.value.trim()) {
-              errors.companyError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.companyError.classList.remove("active");
-            }
-    
-            if (!skills.value.trim()) {
-              errors.skillsError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.skillsError.classList.remove("active");
-            }
-    
-            if (!resume.files.length) {
-              errors.resumeError.classList.add("active");
-              isValid = false;
-            } else {
-              errors.resumeError.classList.remove("active");
-            }
-    
-            applyNowButton.disabled = !isValid;
-          };
-    
-          // Attach validation listeners
-          [name, email, phone, post, designation, company, skills, resume].forEach((input) => {
-            input.addEventListener("input", validateForm);
-          });
-    
-          form.addEventListener("submit", (event) => {
-            event.preventDefault();
-    
-            const formData = new FormData();
-            formData.append("name", name.value.trim());
-            formData.append("email", email.value.trim());
-            formData.append("phone", phone.value.trim());
-            formData.append("post", post.value.trim());
-            formData.append("designation", designation.value.trim());
-            formData.append("company", company.value.trim());
-            formData.append("skills", skills.value.trim());
-            formData.append("resume", resume.files[0]);
-    
-            // WhatsApp redirection
-            const encodedMessage = encodeURIComponent(
-              `Name: ${name.value.trim()}\nEmail: ${email.value.trim()}\nPhone: ${phone.value.trim()}\nPost Applied For: ${post.value.trim()}\nDesignation: ${designation.value.trim()}\nCompany: ${company.value.trim()}\nSkills: ${skills.value.trim()}`
-            );
-    
-            window.open(`https://wa.me/+919381690958?text=${encodedMessage}`);
-          });
-        });
-      </script>
 </body>
 
 </html>

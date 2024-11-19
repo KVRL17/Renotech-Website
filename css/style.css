@@ -1,4 +1,3 @@
-/********** Template CSS **********/
 :root {
     --primary: #FEA116;
     --light: #F1F8FF;
@@ -74,6 +73,48 @@
     font-weight: normal;
     border-radius: 2px;
 }
+
+.imgq {
+    width: 170px;
+    height: 150px;
+    animation: scroll 60s linear infinite;
+  }
+  
+  .slide-track {
+    width: 100%;
+    display: flex;
+    gap: 3em;
+    overflow: hidden;
+  }
+  
+  .sliderr {
+    background-color: whitesmoke;
+    padding: 8em 2em;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+}
+  
+  @keyframes scroll {
+    0% {transform: translateX(0);}
+    100% {transform: translatex(-1000%)}
+  }
 
 .gallery-images-section {
 	display: grid;

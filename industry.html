@@ -184,6 +184,12 @@
             </div>
         </div>
 
+        <div class="whatsapp-icon">
+            <a href="https://wa.me/+91?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20services%20of%20Renotech%20Could%20you%20provide%20more%20details%20on%20available%20services%20and%20the%20process?" target="_blank">
+                <img src="img/images/whatsapp-logo.png" alt="WhatsApp Icon">
+            </a>
+        </div>
+
         <!-- Newsletter Start -->
         <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="row justify-content-center">
@@ -193,37 +199,114 @@
                             <h4 class="mb-4">Contact<span class="text-primary text-uppercase">With Us</span></h4>
                             <div class="col-md-12">
                                 <div class="wow fadeInUp" data-wow-delay="0.2s">
-                                    <form>
+                                    <form id="contactForm">
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="name" placeholder="Your Name">
                                                     <label for="name">Your Name</label>
+                                                    <small class="text-danger" id="nameError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="phone" class="form-control" id="email" placeholder="Your Email">
+                                                    <input type="text" class="form-control" id="phone" placeholder="Your Phone">
                                                     <label for="phone">Your Phone</label>
+                                                    <small class="text-danger" id="phoneError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-floating">
-                                                    <input type="email" class="form-control" id="subject" placeholder="Subject">
+                                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
                                                     <label for="email">Your Email</label>
+                                                    <small class="text-danger" id="emailError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
                                                     <label for="message">Message</label>
+                                                    <small class="text-danger" id="messageError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                                <button id="submitBtn" class="btn btn-primary w-100 py-3" type="button" disabled>Send Message</button>
                                             </div>
                                         </div>
                                     </form>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", () => {
+    const nameInput = document.getElementById("name");
+    const phoneInput = document.getElementById("phone");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const nameError = document.getElementById("nameError");
+    const phoneError = document.getElementById("phoneError");
+    const emailError = document.getElementById("emailError");
+    const messageError = document.getElementById("messageError");
+
+    const validateForm = () => {
+        let isValid = true;
+
+        // Validate Name
+        if (nameInput.value.trim() === "") {
+            nameError.textContent = "Name is required.";
+            isValid = false;
+        } else {
+            nameError.textContent = "";
+        }
+
+        // Validate Phone
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(phoneInput.value.trim())) {
+            phoneError.textContent = "Enter a valid 10-digit phone number.";
+            isValid = false;
+        } else {
+            phoneError.textContent = "";
+        }
+
+        // Validate Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            emailError.textContent = "Enter a valid email address.";
+            isValid = false;
+        } else {
+            emailError.textContent = "";
+        }
+
+        // Validate Message
+        if (messageInput.value.trim() === "") {
+            messageError.textContent = "Message cannot be empty.";
+            isValid = false;
+        } else {
+            messageError.textContent = "";
+        }
+
+        submitBtn.disabled = !isValid;
+    };
+
+    nameInput.addEventListener("input", validateForm);
+    phoneInput.addEventListener("input", validateForm);
+    emailInput.addEventListener("input", validateForm);
+    messageInput.addEventListener("input", validateForm);
+
+    submitBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        const whatsappURL = `https://wa.me/+919381690958?text=${encodeURIComponent(
+            `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`
+        )}`;
+
+        window.open(whatsappURL, "_blank");
+    });
+});
+
+                                    </script>
                                 </div>
                             </div>
                         </div>

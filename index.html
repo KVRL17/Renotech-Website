@@ -147,53 +147,6 @@
         </div>
         <!-- Carousel End -->
 
-
-        <!-- Booking Start -->
-        <!-- <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="bg-white shadow" style="padding: 35px;">
-                    <div class="row g-2">
-                        <div class="col-md-10">
-                            <div class="row g-2">
-                                <div class="col-md-3">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>Adult</option>
-                                        <option value="1">Adult 1</option>
-                                        <option value="2">Adult 2</option>
-                                        <option value="3">Adult 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>Child</option>
-                                        <option value="1">Child 1</option>
-                                        <option value="2">Child 2</option>
-                                        <option value="3">Child 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary w-100">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Booking End -->
-
-
         <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -202,35 +155,6 @@
                         <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
                         <h1 class="mb-4">Renotech</h1>
                         <p class="mb-4">Renotech is a trusted provider of inspection, quality assurance, and technical services for the renewable energy, oil and gas, marine, power, and broader industrial and infrastructure sectors. Committed to excellence and reliability, we support industry standards and enhance operational efficiency in every project. Our wide range of services and technical support offer valuable, mutually beneficial solutions to our customers</p>
-                        <!-- <div class="row g-3 pb-4">
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="mb-0">Rooms</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="mb-0">Staffs</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="mb-0">Clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <a class="btn btn-primary py-3 px-5 mt-2" href="about.html">Know More</a>
                     </div>
                     <div class="col-lg-6">
@@ -371,6 +295,12 @@
         </div>
         <iframe src="sliding.html" width="100%" height="510px" style="border:none;"></iframe>
 
+        <div class="whatsapp-icon">
+            <a href="https://wa.me/+91?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20services%20of%20Renotech%20Could%20you%20provide%20more%20details%20on%20available%20services%20and%20the%20process?" target="_blank">
+                <img src="img/images/whatsapp-logo.png" alt="WhatsApp Icon">
+            </a>
+        </div>
+
     <!-- Newsletter Start -->
         <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="row justify-content-center">
@@ -380,37 +310,114 @@
                             <h4 class="mb-4">Contact<span class="text-primary text-uppercase">With Us</span></h4>
                             <div class="col-md-12">
                                 <div class="wow fadeInUp" data-wow-delay="0.2s">
-                                    <form>
+                                    <form id="contactForm">
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="name" placeholder="Your Name">
                                                     <label for="name">Your Name</label>
+                                                    <small class="text-danger" id="nameError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="phone" class="form-control" id="email" placeholder="Your Email">
+                                                    <input type="text" class="form-control" id="phone" placeholder="Your Phone">
                                                     <label for="phone">Your Phone</label>
+                                                    <small class="text-danger" id="phoneError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-floating">
-                                                    <input type="email" class="form-control" id="subject" placeholder="Subject">
+                                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
                                                     <label for="email">Your Email</label>
+                                                    <small class="text-danger" id="emailError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
                                                     <label for="message">Message</label>
+                                                    <small class="text-danger" id="messageError"></small>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                                <button id="submitBtn" class="btn btn-primary w-100 py-3" type="button" disabled>Send Message</button>
                                             </div>
                                         </div>
                                     </form>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", () => {
+    const nameInput = document.getElementById("name");
+    const phoneInput = document.getElementById("phone");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const nameError = document.getElementById("nameError");
+    const phoneError = document.getElementById("phoneError");
+    const emailError = document.getElementById("emailError");
+    const messageError = document.getElementById("messageError");
+
+    const validateForm = () => {
+        let isValid = true;
+
+        // Validate Name
+        if (nameInput.value.trim() === "") {
+            nameError.textContent = "Name is required.";
+            isValid = false;
+        } else {
+            nameError.textContent = "";
+        }
+
+        // Validate Phone
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(phoneInput.value.trim())) {
+            phoneError.textContent = "Enter a valid 10-digit phone number.";
+            isValid = false;
+        } else {
+            phoneError.textContent = "";
+        }
+
+        // Validate Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            emailError.textContent = "Enter a valid email address.";
+            isValid = false;
+        } else {
+            emailError.textContent = "";
+        }
+
+        // Validate Message
+        if (messageInput.value.trim() === "") {
+            messageError.textContent = "Message cannot be empty.";
+            isValid = false;
+        } else {
+            messageError.textContent = "";
+        }
+
+        submitBtn.disabled = !isValid;
+    };
+
+    nameInput.addEventListener("input", validateForm);
+    phoneInput.addEventListener("input", validateForm);
+    emailInput.addEventListener("input", validateForm);
+    messageInput.addEventListener("input", validateForm);
+
+    submitBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        const whatsappURL = `https://wa.me/+919381690958?text=${encodeURIComponent(
+            `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`
+        )}`;
+
+        window.open(whatsappURL, "_blank");
+    });
+});
+
+                                    </script>
                                 </div>
                             </div>
                         </div>

@@ -134,7 +134,8 @@
 .gallery-img-wrap {
 	height: 200px;
 	width: 377px;
-	box-sizing: content-box;
+    margin: 1.1em;
+    box-sizing: content-box;
 	overflow: hidden;
 }
 

@@ -45,9 +45,9 @@
         <!-- Header Start -->
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
-                <div class="col-lg-3 bg-dark d-none d-lg-block">
+                <div class="col-lg-3 btn-light d-none d-lg-block">
                     <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">RENOTECH</h1>
+                        <h1 class="m-0 text-primary text-uppercase">RENO<span style="color: #062665;">TECH</span></h1>
                     </a>
                 </div>
                 <div class="col-lg-9">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+                    <nav class="navbar navbar-expand-lg btn-light navbar-dark p-3 p-lg-0" >
                         <a href="index.html" class="navbar-brand d-block d-lg-none">
                             <h1 class="m-0 text-primary text-uppercase">RENOTECH</h1>
                         </a>
@@ -93,58 +93,65 @@
         </div>
         <!-- Header End -->
 
-
-        <!-- Contact Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Contact Us</h6>
                     <h1 class="mb-5"><span class="text-primary text-uppercase">Contact</span> For Any Query</h1>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                        <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7550971690866!2d55.352101399999995!3d25.278822599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d00779a1811%3A0x969342ef4e34ca76!2sAl%20Kazim%20Building!5e0!3m2!1sen!2sin!4v1732165290887!5m2!1sen!2sin"
-                            frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <form id="contactForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                                <label for="name">Your Name</label>
+                                                <small class="text-danger" id="nameError"></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="phone" placeholder="Your Phone">
+                                                <label for="phone">Your Phone</label>
+                                                <small class="text-danger" id="phoneError"></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                                <label for="email">Your Email</label>
+                                                <small class="text-danger" id="emailError"></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                                <label for="message">Message</label>
+                                                <small class="text-danger" id="messageError"></small>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button id="submitBtn" class="btn btn-primary w-100 py-3" type="button" disabled>Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                    <iframe class="position-relative rounded w-100 h-100"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7550971690866!2d55.352101399999995!3d25.278822599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d00779a1811%3A0x969342ef4e34ca76!2sAl%20Kazim%20Building!5e0!3m2!1sen!2sin!4v1732165290887!5m2!1sen!2sin"
+                                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                                        tabindex="0"></iframe>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form id="contactForm">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
-                                            <small class="text-danger" id="nameError"></small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="phone" placeholder="Your Phone">
-                                            <label for="phone">Your Phone</label>
-                                            <small class="text-danger" id="phoneError"></small>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
-                                            <small class="text-danger" id="emailError"></small>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                            <label for="message">Message</label>
-                                            <small class="text-danger" id="messageError"></small>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button id="submitBtn" class="btn btn-primary w-100 py-3" type="button" disabled>Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
+                </div>
+            </div>
+        </div>
                             <script>
                                 document.addEventListener("DOMContentLoaded", () => {
 const nameInput = document.getElementById("name");
@@ -218,18 +225,7 @@ window.open(whatsappURL, "_blank");
 });
 
                             </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Contact End -->
-
-        <div class="whatsapp-icon">
-            <a href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20services%20of%20Renotech%20Could%20you%20provide%20more%20details%20on%20available%20services%20and%20the%20process?" target="_blank">
-                <img src="img/images/whatsapp-logo.png" alt="WhatsApp Icon">
-            </a>
-        </div>
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer wow fadeIn mt-5" data-wow-delay="0.1s">
@@ -243,7 +239,7 @@ window.open(whatsappURL, "_blank");
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-8 col-lg-4">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Deira, Dubai, United Arab Emirates</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+971509884020</p>
@@ -254,9 +250,9 @@ window.open(whatsappURL, "_blank");
                             <a class="btn btn-outline-light btn-social" href=""><i class="fa fa-phone-alt"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-12">
+                    <div class="col-lg-3 col-md-6">
                         <div class="row gy-5 g-4">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
                                 <a class="btn btn-link" href="about.html">About Us</a>
                                 <a class="btn btn-link" href="contact.html">Contact Us</a>

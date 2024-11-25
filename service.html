@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hotelier - Hotel HTML Template</title>
+    <title>Renotech</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -45,36 +45,32 @@
         <!-- Header Start -->
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
-                <div class="col-lg-3 bg-dark d-none d-lg-block">
+                <div class="col-lg-2 btn-light d-none d-lg-block">
                     <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">Hotelier</h1>
+                        <img src="img/logo.png" style="height: 100px;width: fit-content;">
                     </a>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-10">
                     <div class="row gx-0 bg-white d-none d-lg-flex">
                         <div class="col-lg-7 px-5 text-start">
                             <div class="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i class="fa fa-envelope text-primary me-2"></i>
-                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">renotechins@gmail.com</p>
                             </div>
                             <div class="h-100 d-inline-flex align-items-center py-2">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+012 345 6789</p>
+                                <p class="mb-0">+971509884020</p>
                             </div>
                         </div>
                         <div class="col-lg-5 px-5 text-end">
                             <div class="d-inline-flex align-items-center py-2">
-                                <a class="me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="" href=""><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+                    <nav class="navbar navbar-expand-lg btn-light navbar-dark p-3 p-lg-0" >
                         <a href="index.html" class="navbar-brand d-block d-lg-none">
-                            <h1 class="m-0 text-primary text-uppercase">Hotelier</h1>
+                            <h1 class="m-0 text-primary text-uppercase">RENOTECH</h1>
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
@@ -82,20 +78,15 @@
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
                                 <a href="index.html" class="nav-item nav-link">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="room.html" class="nav-item nav-link active">Services</a>
-                                <a href="room.html" class="nav-item nav-link">Rooms</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Booking</a>
-                                        <a href="team.html" class="dropdown-item">Our Team</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="about.html" class="nav-item nav-link">About Us</a>
+                                <a href="service.html" class="nav-item nav-link active">Services</a>
+                                <a href="industry.html" class="nav-item nav-link">Industry</a>
+                                <a href="certification.html" class="nav-item nav-link">certification</a>
+                                <a href="news.html" class="nav-item nav-link">Gallery</a>
+                                <a href="booking.html" class="nav-item nav-link">Career</a>
+                                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                             </div>
-                            <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
+                            <button onclick="showModal()" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Enquiry<i class="fa fa-arrow-right ms-3"></i></button>
                         </div>
                     </nav>
                 </div>
@@ -103,254 +94,243 @@
         </div>
         <!-- Header End -->
 
+        <div class="modal" id="enquiryModal">
+            <div class="modal-content">
+              <button class="close-btn" onclick="closeModal()">&times;</button>
+              <h2>Enquiry</h2>
+              <form id="contactform" 
+      action="https://formsubmit.co/renotechins@gmail.com" 
+      method="POST" 
+      enctype="multipart/form-data"
+      onsubmit="return updateSubject()">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+  
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+        <label for="name">Your Name</label>
+        <small class="text-danger" id="nameError"></small>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
+        <label for="phone">Your Phone</label>
+        <small class="text-danger" id="phoneError"></small>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-floating">
+        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
+        <label for="email">Your Email</label>
+        <small class="text-danger" id="emailError"></small>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-floating">
+        <textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+        <label for="message">Message</label>
+        <small class="text-danger" id="messageError"></small>
+      </div>
+    </div>
+    <div class="col-12">
+      <button id="submittBtn" class="btn btn-primary w-100 py-3" type="submit" disabled>Send Message</button>
+    </div>
+  </div>
+</form>
 
-        <!-- Page Header Start -->
-        <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
-            <div class="container-fluid page-header-inner py-5">
-                <div class="container text-center pb-5">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center text-uppercase">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
-                        </ol>
-                    </nav>
-                </div>
+<script>
+  const form = document.getElementById('contactform');
+  const fields = ['name', 'email', 'phone', 'message'];
+  const submitButton = document.getElementById('submittBtn');
+
+  // Validation Patterns
+  const patterns = {
+    name: /^[a-zA-Z\s]{3,}$/,
+    email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    phone: /^[0-9]{10}$/,
+    message: /.+/
+  };
+
+  // Validate individual field
+  function validateField(field) {
+    const input = document.getElementById(field);
+    const errorElement = document.getElementById(`${field}Error`);
+    if (patterns[field].test(input.value)) {
+      errorElement.textContent = '';
+      return true;
+    } else {
+      errorElement.textContent = `Please enter a valid ${field.replace('_', ' ')}.`;
+      return false;
+    }
+  }
+
+  // Check all fields
+  function checkAllFields() {
+    let allValid = true;
+    fields.forEach((field) => {
+      const valid = validateField(field);
+      if (!valid) allValid = false;
+    });
+    submitButton.disabled = !allValid;
+  }
+
+  // Add Event Listeners
+  fields.forEach((field) => {
+    const input = document.getElementById(field);
+    input.addEventListener('input', () => {
+      validateField(field);
+      checkAllFields();
+    });
+  });
+
+  // Update the subject before submitting the form
+  function updateSubject() {
+    const name = document.getElementById('name').value.trim();
+    const subjectField = document.getElementById('subject');
+    if (name) {
+      subjectField.value = `New Contact Information From ${name}`;
+    }
+    return checkAllFields(); // Ensure all fields are valid before submission
+  }
+</script>
             </div>
+          </div>
+          
+          <script>
+            function showModal() {
+              document.getElementById('enquiryModal').style.display = 'flex';
+            }
+          
+            function closeModal() {
+              document.getElementById('enquiryModal').style.display = 'none';
+            }
+          </script>
+
+
+<!-- Room Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Our Services</h6>
+            <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Services</span></h1>
         </div>
-        <!-- Page Header End -->
-
-
-        <!-- Booking Start -->
-        <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="bg-white shadow" style="padding: 35px;">
-                    <div class="row g-2">
-                        <div class="col-md-10">
-                            <div class="row g-2">
-                                <div class="col-md-3">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>Adult</option>
-                                        <option value="1">Adult 1</option>
-                                        <option value="2">Adult 2</option>
-                                        <option value="3">Adult 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select">
-                                        <option selected>Child</option>
-                                        <option value="1">Child 1</option>
-                                        <option value="2">Child 2</option>
-                                        <option value="3">Child 3</option>
-                                    </select>
-                                </div>
-                            </div>
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <!-- <div class="position-relative">
+                        <img class="img-fluid" src="img/Renotch services/Material Inspection.png" alt="">
+                    </div> -->
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Inspections</h5>
                         </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary w-100">Submit</button>
+                        <p class="text-body mb-3">A process of carefully examining or reviewing something to ensure it meets specific standards, requirements, or regulations</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="inspectionservices.html">View Services</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Material%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Booking End -->
-
-
-        <!-- Service Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">Our Services</h6>
-                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Services</span></h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-hotel fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Rooms & Appartment</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-utensils fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Food & Restaurant</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-spa fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Spa & Fitness</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-swimmer fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Sports & Gaming</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-glass-cheers fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Event & Party</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-dumbbell fa-2x text-primary"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">GYM & Yoga</h5>
-                            <p class="text-body mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
-            <div class="container">
-                <div class="owl-carousel testimonial-carousel py-5">
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-1.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Testimonial End -->
-
-
-        <!-- Newsletter Start -->
-        <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 border rounded p-1">
-                    <div class="border rounded text-center p-1">
-                        <div class="bg-white rounded text-center p-5">
-                            <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
-                            <div class="position-relative mx-auto" style="max-width: 400px;">
-                                <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
-                            </div>
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <!-- <div class="position-relative">
+                        <img class="img-fluid" src="img/Renotch services/Vendor inspection.png" alt="">
+                    </div> -->
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Construction management</h5>
+                        </div>
+                        <p class="text-body mb-3">Supporting projects from construction to commissioning through our expert construction team, equipped with knowledge of every phase</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Vendor%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <!-- <div class="position-relative">
+                        <img class="img-fluid" src="img/Renotch services/Piping inspection.png" alt="">
+                    </div> -->
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Technical consultants</h5>
+                        </div>
+                        <p class="text-body mb-3">We provide a wide range of technical solutions, professional support, and services related to projects across various industries</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Piping%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <!-- <div class="position-relative">
+                        <img class="img-fluid" src="img/Renotch services/Welding Inspection.png" alt="">
+                    </div> -->
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Project Quality Management</h5>
+                        </div>
+                        <p class="text-body mb-3">Providing quality management support to the industry through advanced technical expertise and tailored solutions.</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Welding%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Newsletter Start -->
+    </div>
+</div>
+<!-- Room End -->
+
+<div class="whatsapp-icon">
+    <a href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20services%20of%20Renotech%20Could%20you%20provide%20more%20details%20on%20available%20services%20and%20the%20process?" target="_blank">
+        <img src="img/images/whatsapp-logo.png" alt="WhatsApp Icon">
+    </a>
+</div>
+
+        
         
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid bg-dark text-light footer wow fadeIn mt-5" data-wow-delay="0.1s">
             <div class="container pb-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4">
                         <div class="bg-primary rounded p-4">
-                            <a href="index.html"><h1 class="text-white text-uppercase mb-3">Hotelier</h1></a>
+                            <a href="index.html"><h1 class="text-white text-uppercase mb-3">Renotech</h1></a>
                             <p class="text-white mb-0">
-								Download <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">Hotelier – Premium Version</a>, build a professional website for your hotel business and grab the attention of new visitors upon your site’s launch.
-							</p>
+                                Ensuring excellence in quality, service, and safety across industries
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-8 col-lg-4">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Deira, Dubai, United Arab Emirates</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+971509884020</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>renotechins@gmail.com</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fa fa-phone-alt"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-12">
+                    <div class="col-lg-3 col-md-6">
                         <div class="row gy-5 g-4">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
-                                <a class="btn btn-link" href="">About Us</a>
-                                <a class="btn btn-link" href="">Contact Us</a>
-                                <a class="btn btn-link" href="">Privacy Policy</a>
-                                <a class="btn btn-link" href="">Terms & Condition</a>
-                                <a class="btn btn-link" href="">Support</a>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
-                                <a class="btn btn-link" href="">Food & Restaurant</a>
-                                <a class="btn btn-link" href="">Spa & Fitness</a>
-                                <a class="btn btn-link" href="">Sports & Gaming</a>
-                                <a class="btn btn-link" href="">Event & Party</a>
-                                <a class="btn btn-link" href="">GYM & Yoga</a>
+                                <a class="btn btn-link" href="about.html">About Us</a>
+                                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                                <a class="btn btn-link" href="industry.html">Industry</a>
+                                <a class="btn btn-link" href="room.html">Services</a>
+                                <a class="btn btn-link" href="news.html">Gallery</a>
                             </div>
                         </div>
                     </div>
@@ -360,17 +340,12 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            &copy; <a class="border-bottom" href="index.html">Renotech</a>, All Right Reserved. </a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
+                                <a href="index.html">Home</a>
+                                <a href="contact.html">Help</a>
                             </div>
                         </div>
                     </div>

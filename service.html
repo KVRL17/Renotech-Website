@@ -81,7 +81,7 @@
                                 <a href="about.html" class="nav-item nav-link">About Us</a>
                                 <a href="service.html" class="nav-item nav-link active">Services</a>
                                 <a href="industry.html" class="nav-item nav-link">Industry</a>
-                                <a href="certification.html" class="nav-item nav-link">certification</a>
+                                <a href="certification.html" class="nav-item nav-link">Accrediations</a>
                                 <a href="news.html" class="nav-item nav-link">Gallery</a>
                                 <a href="booking.html" class="nav-item nav-link">Career</a>
                                 <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -106,7 +106,7 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
   <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+  <input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
   
   <div class="row g-3">
     <div class="col-md-6">
@@ -148,7 +148,6 @@
   const fields = ['name', 'email', 'phone', 'message'];
   const submitButton = document.getElementById('submittBtn');
 
-  // Validation Patterns
   const patterns = {
     name: /^[a-zA-Z\s]{3,}$/,
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -156,7 +155,6 @@
     message: /.+/
   };
 
-  // Validate individual field
   function validateField(field) {
     const input = document.getElementById(field);
     const errorElement = document.getElementById(`${field}Error`);
@@ -169,7 +167,6 @@
     }
   }
 
-  // Check all fields
   function checkAllFields() {
     let allValid = true;
     fields.forEach((field) => {
@@ -179,7 +176,6 @@
     submitButton.disabled = !allValid;
   }
 
-  // Add Event Listeners
   fields.forEach((field) => {
     const input = document.getElementById(field);
     input.addEventListener('input', () => {
@@ -188,14 +184,13 @@
     });
   });
 
-  // Update the subject before submitting the form
   function updateSubject() {
     const name = document.getElementById('name').value.trim();
     const subjectField = document.getElementById('subject');
     if (name) {
       subjectField.value = `New Contact Information From ${name}`;
     }
-    return checkAllFields(); // Ensure all fields are valid before submission
+    return checkAllFields();
   }
 </script>
             </div>
@@ -232,7 +227,7 @@
                         <p class="text-body mb-3">A process of carefully examining or reviewing something to ensure it meets specific standards, requirements, or regulations</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-sm btn-primary rounded py-2 px-4" href="inspectionservices.html">View Services</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Material%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Inspection%20services%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
                         </div>
                     </div>
                 </div>
@@ -248,7 +243,8 @@
                         </div>
                         <p class="text-body mb-3">Supporting projects from construction to commissioning through our expert construction team, equipped with knowledge of every phase</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Vendor%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="mailto:renotechins@gmail.com?subject=Enquiry%20About%20Construction%20Management%20Service&body=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Construction%20Management%20services%20in%20Renotech.%20Could%20you%20provide%20more%20details%20about%20the%20services%20and%20the%20process?">Get Service&emsp14;<i ><img src="img/icons8-email-24.png" style="width: 20px;height: 20px;"></i></a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Construction%20Management%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service&emsp14;<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -264,7 +260,8 @@
                         </div>
                         <p class="text-body mb-3">We provide a wide range of technical solutions, professional support, and services related to projects across various industries</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Piping%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="mailto:renotechins@gmail.com?subject=Enquiry%20About%20Technical%20Consultants%20Service&body=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Techincal%20Consultant%20services%20in%20Renotech.%20Could%20you%20provide%20more%20details%20about%20the%20services%20and%20the%20process?">Get Service&emsp14;<i ><img src="img/icons8-email-24.png" style="width: 20px;height: 20px;"></i></a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Technical%20Consultants%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service&emsp14;<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -280,7 +277,8 @@
                         </div>
                         <p class="text-body mb-3">Providing quality management support to the industry through advanced technical expertise and tailored solutions.</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Welding%20Inspection%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service</a>
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="mailto:renotechins@gmail.com?subject=Enquiry%20About%20Project%20Quality%20Management%20Service&body=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Project%20Quality%20Management%20services%20in%20Renotech.%20Could%20you%20provide%20more%20details%20about%20the%20services%20and%20the%20process?">Get Service&emsp14;<i ><img src="img/icons8-email-24.png" style="width: 20px;height: 20px;"></i></a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="https://wa.me/+971509884020?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Project%20Quality%20Management%20service%20in%20Renotech%20Could%20you%20provide%20more%20details%20about%20the%20service%20and%20the%20process?">Get Service&emsp14;<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>

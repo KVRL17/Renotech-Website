@@ -106,7 +106,7 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
   <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+  <input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
   
   <div class="row g-3">
     <div class="col-md-6">
@@ -148,7 +148,6 @@
   const fields = ['name', 'email', 'phone', 'message'];
   const submitButton = document.getElementById('submittBtn');
 
-  // Validation Patterns
   const patterns = {
     name: /^[a-zA-Z\s]{3,}$/,
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -156,7 +155,6 @@
     message: /.+/
   };
 
-  // Validate individual field
   function validateField(field) {
     const input = document.getElementById(field);
     const errorElement = document.getElementById(`${field}Error`);
@@ -169,7 +167,6 @@
     }
   }
 
-  // Check all fields
   function checkAllFields() {
     let allValid = true;
     fields.forEach((field) => {
@@ -179,7 +176,6 @@
     submitButton.disabled = !allValid;
   }
 
-  // Add Event Listeners
   fields.forEach((field) => {
     const input = document.getElementById(field);
     input.addEventListener('input', () => {
@@ -188,14 +184,13 @@
     });
   });
 
-  // Update the subject before submitting the form
   function updateSubject() {
     const name = document.getElementById('name').value.trim();
     const subjectField = document.getElementById('subject');
     if (name) {
       subjectField.value = `New Contact Information From ${name}`;
     }
-    return checkAllFields(); // Ensure all fields are valid before submission
+    return checkAllFields();
   }
 </script>
             </div>
@@ -227,28 +222,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="carousel-item">
-                        <img class="w-100" src="img/images/home page a.jpg" alt="Image">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Renotech</h6>
-                                <h1 class="display-9 text-white mb-4 animated slideInDown">Empowering Sustainable Energy Through Precision Inspections</h1>
-                                <a href="room.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Services</a>
-                                <a href="contact.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
-                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button> -->
             </div>
         </div>
         <!-- Carousel End -->
@@ -522,7 +496,6 @@ const messageError = document.getElementById("messageError");
 const validateForm = () => {
 let isValid = true;
 
-// Validate Name
 if (nameInput.value.trim() === "") {
 nameError.textContent = "Name is required.";
 isValid = false;
@@ -530,7 +503,6 @@ isValid = false;
 nameError.textContent = "";
 }
 
-// Validate Phone
 const phoneRegex = /^[0-9]{10}$/;
 if (!phoneRegex.test(phoneInput.value.trim())) {
 phoneError.textContent = "Enter a valid 10-digit phone number.";
@@ -539,7 +511,6 @@ isValid = false;
 phoneError.textContent = "";
 }
 
-// Validate Email
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(emailInput.value.trim())) {
 emailError.textContent = "Enter a valid email address.";
@@ -548,7 +519,6 @@ isValid = false;
 emailError.textContent = "";
 }
 
-// Validate Message
 if (messageInput.value.trim() === "") {
 messageError.textContent = "Message cannot be empty.";
 isValid = false;

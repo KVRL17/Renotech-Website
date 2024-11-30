@@ -112,7 +112,7 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
   <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+  <input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
   
   <div class="row g-3">
     <div class="col-md-6">
@@ -154,7 +154,6 @@
   const fields = ['name', 'email', 'phone', 'message'];
   const submitButton = document.getElementById('submittBtn');
 
-  // Validation Patterns
   const patterns = {
     name: /^[a-zA-Z\s]{3,}$/,
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -162,7 +161,6 @@
     message: /.+/
   };
 
-  // Validate individual field
   function validateField(field) {
     const input = document.getElementById(field);
     const errorElement = document.getElementById(`${field}Error`);
@@ -175,7 +173,6 @@
     }
   }
 
-  // Check all fields
   function checkAllFields() {
     let allValid = true;
     fields.forEach((field) => {
@@ -185,7 +182,6 @@
     submitButton.disabled = !allValid;
   }
 
-  // Add Event Listeners
   fields.forEach((field) => {
     const input = document.getElementById(field);
     input.addEventListener('input', () => {
@@ -194,14 +190,13 @@
     });
   });
 
-  // Update the subject before submitting the form
   function updateSubject() {
     const name = document.getElementById('name').value.trim();
     const subjectField = document.getElementById('subject');
     if (name) {
       subjectField.value = `New Contact Information From ${name}`;
     }
-    return checkAllFields(); // Ensure all fields are valid before submission
+    return checkAllFields();
   }
 </script>
                             </div>

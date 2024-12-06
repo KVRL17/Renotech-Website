@@ -144,54 +144,54 @@
 </form>
 
 <script>
-  const form = document.getElementById('contactform');
-  const fields = ['name', 'email', 'phone', 'message'];
-  const submitButton = document.getElementById('submittBtn');
+const form = document.getElementById('contactform');
+const fields = ['name', 'email', 'phone', 'message'];
+const submitButton = document.getElementById('submittBtn');
 
-  const patterns = {
-    name: /^[a-zA-Z\s]{3,}$/,
-    email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-    phone: /^[0-9]{20}$/,
-    message: /.+/
-  };
+const patterns = {
+  name: /^[a-zA-Z\s]{3,}$/,
+  email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+  phone: /.+/,
+  message: /.+/
+};
 
-  function validateField(field) {
-    const input = document.getElementById(field);
-    const errorElement = document.getElementById(`${field}Error`);
-    if (patterns[field].test(input.value)) {
-      errorElement.textContent = '';
-      return true;
-    } else {
-      errorElement.textContent = `Please enter a valid ${field.replace('_', ' ')}.`;
-      return false;
-    }
+function validateField(field) {
+  const input = document.getElementById(field);
+  const errorElement = document.getElementById(`${field}Error`);
+  if (patterns[field].test(input.value.trim())) {
+    errorElement.textContent = '';
+    return true;
+  } else {
+    errorElement.textContent = `Please enter a valid ${field.replace('_', ' ')}.`;
+    return false;
   }
+}
 
-  function checkAllFields() {
-    let allValid = true;
-    fields.forEach((field) => {
-      const valid = validateField(field);
-      if (!valid) allValid = false;
-    });
-    submitButton.disabled = !allValid;
-  }
-
+function checkAllFields() {
+  let allValid = true;
   fields.forEach((field) => {
-    const input = document.getElementById(field);
-    input.addEventListener('input', () => {
-      validateField(field);
-      checkAllFields();
-    });
+    const valid = validateField(field);
+    if (!valid) allValid = false;
   });
+  submitButton.disabled = !allValid;
+}
 
-  function updateSubject() {
-    const name = document.getElementById('name').value.trim();
-    const subjectField = document.getElementById('subject');
-    if (name) {
-      subjectField.value = `New Contact Information From ${name}`;
-    }
-    return checkAllFields();
+fields.forEach((field) => {
+  const input = document.getElementById(field);
+  input.addEventListener('input', () => {
+    validateField(field);
+    checkAllFields();
+  });
+});
+
+function updateSubject() {
+  const name = document.getElementById('name').value.trim();
+  const subjectField = document.getElementById('subject');
+  if (name) {
+    subjectField.value = `New Contact Information From ${name}`;
   }
+  return checkAllFields();
+}
 </script>
             </div>
           </div>
@@ -503,13 +503,6 @@ isValid = false;
 nameError.textContent = "";
 }
 
-const phoneRegex = /^[0-9]{10}$/;
-if (!phoneRegex.test(phoneInput.value.trim())) {
-phoneError.textContent = "Enter a valid 10-digit phone number.";
-isValid = false;
-} else {
-phoneError.textContent = "";
-}
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(emailInput.value.trim())) {

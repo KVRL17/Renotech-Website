@@ -237,15 +237,6 @@ if (nameInput.value.trim() === "") {
     nameError.textContent = "";
 }
 
-// Validate Phone
-const phoneRegex = /^[0-9]{10}$/;
-if (!phoneRegex.test(phoneInput.value.trim())) {
-    phoneError.textContent = "Enter a valid 10-digit phone number.";
-    isValid = false;
-} else {
-    phoneError.textContent = "";
-}
-
 // Validate Email
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(emailInput.value.trim())) {
